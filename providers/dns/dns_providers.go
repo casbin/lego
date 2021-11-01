@@ -110,7 +110,7 @@ func NewDNSChallengeProviderByName(name string) (challenge.Provider, error) {
 	case "acme-dns":
 		return acmedns.NewDNSProvider()
 	case "alidns":
-		return alidns.NewDNSProvider()
+		return alidns.NewDNSProvider(&alidns.Config{})
 	case "allinkl":
 		return allinkl.NewDNSProvider()
 	case "arvancloud":
