@@ -13,7 +13,6 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/alidns"
 	"github.com/go-acme/lego/v4/challenge/dns01"
-	"github.com/go-acme/lego/v4/platform/config/env"
 	"golang.org/x/net/idna"
 )
 
@@ -49,12 +48,12 @@ type Config struct {
 }
 
 // NewDefaultConfig returns a default configuration for the DNSProvider.
-func NewDefaultConfig() *Config {
+func NewDefaultConfig(endTime int) *Config {
 	return &Config{
-		TTL:                env.GetOrDefaultInt(EnvTTL, 600),
-		PropagationTimeout: env.GetOrDefaultSecond(EnvPropagationTimeout, dns01.DefaultPropagationTimeout),
-		PollingInterval:    env.GetOrDefaultSecond(EnvPollingInterval, dns01.DefaultPollingInterval),
-		HTTPTimeout:        env.GetOrDefaultSecond(EnvHTTPTimeout, 10*time.Second),
+		TTL:                600,
+		PropagationTimeout: time.Duration(endTime) * time.Minute,
+		PollingInterval:    dns01.DefaultPollingInterval,
+		HTTPTimeout:        10 * time.Second,
 	}
 }
 
@@ -68,25 +67,7 @@ type DNSProvider struct {
 // - If you're using the instance RAM role, the RAM role environment variable must be passed in: ALICLOUD_RAM_ROLE.
 // - Other than that, credentials must be passed in the environment variables:
 // ALICLOUD_ACCESS_KEY, ALICLOUD_SECRET_KEY, and optionally ALICLOUD_SECURITY_TOKEN.
-func NewDNSProvider() (*DNSProvider, error) {
-	config := NewDefaultConfig()
-	config.RegionID = env.GetOrFile(EnvRegionID)
-
-	values, err := env.Get(EnvRAMRole)
-	if err == nil {
-		config.RAMRole = values[EnvRAMRole]
-		return NewDNSProviderConfig(config)
-	}
-
-	values, err = env.Get(EnvAccessKey, EnvSecretKey)
-	if err != nil {
-		return nil, fmt.Errorf("alicloud: %w", err)
-	}
-
-	config.APIKey = values[EnvAccessKey]
-	config.SecretKey = values[EnvSecretKey]
-	config.SecurityToken = env.GetOrFile(EnvSecurityToken)
-
+func NewDNSProvider(config *Config) (*DNSProvider, error) {
 	return NewDNSProviderConfig(config)
 }
 

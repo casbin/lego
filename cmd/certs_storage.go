@@ -53,6 +53,15 @@ func NewCertificatesStorage(ctx *cli.Context) *CertificatesStorage {
 	}
 }
 
+func NewCertificatesStorageLib(path string, filename string, isPem bool) *CertificatesStorage {
+	return &CertificatesStorage{
+		rootPath:    path,
+		archivePath: "",
+		pem:         isPem,
+		filename:    filename,
+	}
+}
+
 func (s *CertificatesStorage) CreateRootFolder() {
 	err := createNonExistingFolder(s.rootPath)
 	if err != nil {
