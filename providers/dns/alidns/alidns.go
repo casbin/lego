@@ -48,10 +48,10 @@ type Config struct {
 }
 
 // NewDefaultConfig returns a default configuration for the DNSProvider.
-func NewDefaultConfig(endTime int) *Config {
+func NewDefaultConfig() *Config {
 	return &Config{
 		TTL:                600,
-		PropagationTimeout: time.Duration(endTime) * time.Minute,
+		PropagationTimeout: dns01.DefaultPropagationTimeout,
 		PollingInterval:    dns01.DefaultPollingInterval,
 		HTTPTimeout:        10 * time.Second,
 	}
@@ -80,7 +80,6 @@ func NewDNSProviderConfig(config *Config) (*DNSProvider, error) {
 	if config.RegionID == "" {
 		config.RegionID = defaultRegionID
 	}
-
 	var credential auth.Credential
 	switch {
 	case config.RAMRole != "":
