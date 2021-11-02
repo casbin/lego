@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/go-acme/lego/v4/challenge/dns01"
+	"github.com/casbin/lego/v4/challenge/dns01"
 )
 
 const defaultBaseURL = "https://api.cloudns.net/dns/"

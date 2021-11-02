@@ -7,7 +7,7 @@ import (
 	"net/textproto"
 	"strings"
 
-	"github.com/go-acme/lego/v4/log"
+	"github.com/casbin/lego/v4/log"
 )
 
 // ProviderServer implements ChallengeProvider for `http-01` challenge.

@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-acme/lego/v4/certcrypto"
-	"github.com/go-acme/lego/v4/lego"
-	"github.com/go-acme/lego/v4/log"
-	"github.com/go-acme/lego/v4/registration"
+	"github.com/casbin/lego/v4/certcrypto"
+	"github.com/casbin/lego/v4/lego"
+	"github.com/casbin/lego/v4/log"
+	"github.com/casbin/lego/v4/registration"
 	"github.com/urfave/cli"
 )
 

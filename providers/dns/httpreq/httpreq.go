@@ -12,8 +12,8 @@ import (
 	"path"
 	"time"
 
-	"github.com/go-acme/lego/v4/challenge/dns01"
-	"github.com/go-acme/lego/v4/platform/config/env"
+	"github.com/casbin/lego/v4/challenge/dns01"
+	"github.com/casbin/lego/v4/platform/config/env"
 )
 
 // Environment variables names.

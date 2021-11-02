@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-acme/lego/v4/acme"
-	"github.com/go-acme/lego/v4/acme/api"
-	"github.com/go-acme/lego/v4/challenge"
-	"github.com/go-acme/lego/v4/platform/tester"
+	"github.com/casbin/lego/v4/acme"
+	"github.com/casbin/lego/v4/acme/api"
+	"github.com/casbin/lego/v4/challenge"
+	"github.com/casbin/lego/v4/platform/tester"
 	"github.com/stretchr/testify/require"
 )
 

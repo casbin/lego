@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-acme/lego/v4/platform/tester"
+	"github.com/casbin/lego/v4/platform/tester"
 	"github.com/oracle/oci-go-sdk/common"
 	"github.com/stretchr/testify/require"
 )

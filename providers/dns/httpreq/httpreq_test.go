@@ -9,7 +9,7 @@ import (
 	"path"
 	"testing"
 
-	"github.com/go-acme/lego/v4/platform/tester"
+	"github.com/casbin/lego/v4/platform/tester"
 	"github.com/stretchr/testify/require"
 )
 

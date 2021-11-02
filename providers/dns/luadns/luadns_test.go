@@ -3,8 +3,8 @@ package luadns
 import (
 	"testing"
 
-	"github.com/go-acme/lego/v4/platform/tester"
-	"github.com/go-acme/lego/v4/providers/dns/luadns/internal"
+	"github.com/casbin/lego/v4/platform/tester"
+	"github.com/casbin/lego/v4/providers/dns/luadns/internal"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

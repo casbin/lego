@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/casbin/lego/v4/challenge/dns01"
+	"github.com/casbin/lego/v4/platform/config/env"
 	"github.com/dnsimple/dnsimple-go/dnsimple"
-	"github.com/go-acme/lego/v4/challenge/dns01"
-	"github.com/go-acme/lego/v4/platform/config/env"
 	"golang.org/x/oauth2"
 )
 
