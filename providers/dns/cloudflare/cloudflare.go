@@ -9,10 +9,10 @@ import (
 	"sync"
 	"time"
 
+	"github.com/casbin/lego/v4/challenge/dns01"
+	"github.com/casbin/lego/v4/log"
+	"github.com/casbin/lego/v4/platform/config/env"
 	cloudflare "github.com/cloudflare/cloudflare-go"
-	"github.com/go-acme/lego/v4/challenge/dns01"
-	"github.com/go-acme/lego/v4/log"
-	"github.com/go-acme/lego/v4/platform/config/env"
 )
 
 const (

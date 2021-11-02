@@ -3,10 +3,10 @@ package http01
 import (
 	"fmt"
 
-	"github.com/go-acme/lego/v4/acme"
-	"github.com/go-acme/lego/v4/acme/api"
-	"github.com/go-acme/lego/v4/challenge"
-	"github.com/go-acme/lego/v4/log"
+	"github.com/casbin/lego/v4/acme"
+	"github.com/casbin/lego/v4/acme/api"
+	"github.com/casbin/lego/v4/challenge"
+	"github.com/casbin/lego/v4/log"
 )
 
 type ValidateFunc func(core *api.Core, domain string, chlng acme.Challenge) error

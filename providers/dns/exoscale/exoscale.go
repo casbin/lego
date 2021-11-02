@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/casbin/lego/v4/challenge/dns01"
+	"github.com/casbin/lego/v4/platform/config/env"
 	"github.com/exoscale/egoscale"
-	"github.com/go-acme/lego/v4/challenge/dns01"
-	"github.com/go-acme/lego/v4/platform/config/env"
 )
 
 const defaultBaseURL = "https://api.exoscale.com/dns"

@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/go-acme/lego/v4/certcrypto"
+	"github.com/casbin/lego/v4/certcrypto"
 	"github.com/urfave/cli"
 )
 

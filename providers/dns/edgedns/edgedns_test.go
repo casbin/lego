@@ -7,8 +7,8 @@ import (
 
 	configdns "github.com/akamai/AkamaiOPEN-edgegrid-golang/configdns-v2"
 	"github.com/akamai/AkamaiOPEN-edgegrid-golang/edgegrid"
-	"github.com/go-acme/lego/v4/challenge/dns01"
-	"github.com/go-acme/lego/v4/platform/tester"
+	"github.com/casbin/lego/v4/challenge/dns01"
+	"github.com/casbin/lego/v4/platform/tester"
 	"github.com/stretchr/testify/require"
 )
 

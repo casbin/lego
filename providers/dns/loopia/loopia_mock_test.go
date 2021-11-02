@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/go-acme/lego/v4/providers/dns/loopia/internal"
+	"github.com/casbin/lego/v4/providers/dns/loopia/internal"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"

@@ -8,7 +8,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/lightsail"
-	"github.com/go-acme/lego/v4/platform/tester"
+	"github.com/casbin/lego/v4/platform/tester"
 	"github.com/stretchr/testify/require"
 )
 
