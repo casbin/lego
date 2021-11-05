@@ -33,6 +33,7 @@ const (
 	EnvPropagationTimeout = envNamespace + "PROPAGATION_TIMEOUT"
 	EnvPollingInterval    = envNamespace + "POLLING_INTERVAL"
 	EnvHTTPTimeout        = envNamespace + "HTTP_TIMEOUT"
+	minTTL                = 600
 )
 
 // Config is used to configure the creation of the DNSProvider.
@@ -92,7 +93,9 @@ func NewDNSProviderConfig(config *Config) (*DNSProvider, error) {
 	default:
 		return nil, fmt.Errorf("alicloud: ram role or credentials missing")
 	}
-
+	if config.TTL < minTTL {
+		return nil, fmt.Errorf("alicloud: invalid TTL, TTL (%d) must be greater than %d", config.TTL, minTTL)
+	}
 	conf := sdk.NewConfig().WithTimeout(config.HTTPTimeout)
 
 	client, err := alidns.NewClientWithOptions(config.RegionID, conf, credential)
