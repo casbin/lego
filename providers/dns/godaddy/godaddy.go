@@ -61,16 +61,7 @@ type DNSProvider struct {
 // NewDNSProvider returns a DNSProvider instance configured for godaddy.
 // Credentials must be passed in the environment variables:
 // GODADDY_API_KEY and GODADDY_API_SECRET.
-func NewDNSProvider() (*DNSProvider, error) {
-	values, err := env.Get(EnvAPIKey, EnvAPISecret)
-	if err != nil {
-		return nil, fmt.Errorf("godaddy: %w", err)
-	}
-
-	config := NewDefaultConfig()
-	config.APIKey = values[EnvAPIKey]
-	config.APISecret = values[EnvAPISecret]
-
+func NewDNSProvider(config *Config) (*DNSProvider, error) {
 	return NewDNSProviderConfig(config)
 }
 
@@ -87,7 +78,6 @@ func NewDNSProviderConfig(config *Config) (*DNSProvider, error) {
 	if config.TTL < minTTL {
 		return nil, fmt.Errorf("godaddy: invalid TTL, TTL (%d) must be greater than %d", config.TTL, minTTL)
 	}
-
 	return &DNSProvider{config: config}, nil
 }
 

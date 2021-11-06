@@ -1,9 +1,0 @@
-{
-  "errors": [
-    {
-      "code": 1,
-      "message": "Unauthorized",
-      "description": "Unauthorized: Signature was not provided or was invalid"
-    }
-  ]
-}
